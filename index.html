@@ -12,37 +12,36 @@
 <body>
   <section class="py-5 text-center">
     <div class="container">
-        <h2 class="text-uppercase mb-3 text-light display-6">cacola il prezzo del tuo biglietto</h2>
-        <div class="row justify-content-around">
-          <div class="col-lg-3">
-            <label for="user-name" class="input_label">Nome e Cognome</label>
-            <input type="text" class="form-control" name="name" id="user-full-name" placeholder="Inserisci nome e cognome">
-          </div>
-          <div class="col-lg-3">
-            <label for="ticket-km" class="input_label">Km da percorrere</label>
-            <input type="text" class="form-control" name="km" id="ticket-km" placeholder="Inserisci il numero di km">
-          </div>
-          <div class="col-lg-3">
-            <label for="discount" class="input_label">Fascia d'età</label>
-            <select class="form-select" name="discount" id="discount">
-              <option selected>Seleziona il range di età</option>
-              <option value="1">Minorenne</option>
-              <option value="2">Maggiorenne</option>
-              <option value="3">Over 65</option>
-            </select>
-          </div>
+      <h2 class="text-uppercase mb-3 text-light display-6">calcola il prezzo del tuo biglietto</h2>
+      <div class="row justify-content-around">
+        <div class="col-lg-3">
+          <label for="user-name" class="input_label">Nome e Cognome</label>
+          <input type="text" class="form-control" name="name" id="user-full-name" placeholder="Inserisci nome e cognome">
         </div>
-        <!-- <span id="ticket-price">Prezzo calcolato</span> -->
+        <div class="col-lg-3">
+          <label for="ticket-km" class="input_label">Km da percorrere</label>
+          <input type="text" class="form-control" name="km" id="ticket-km" placeholder="Inserisci il numero di km">
+        </div>
+        <div class="col-lg-3">
+          <label for="discount" class="input_label">Fascia d'età</label>
+          <select class="form-select" name="discount" id="discount">
+            <option selected value="">Seleziona il range di età</option>
+            <option value="1">Minorenne</option>
+            <option value="2">Maggiorenne</option>
+            <option value="3">Over 65</option>
+          </select>
+        </div>
+      </div>
     </div>
     <button class="cta-calc mt-5 btn btn-light">Calcola il prezzo</button>
   </section>
 
-  <section>
+  <section class="preview-section d-none">
     <div class="container">
       <h3 class="text-uppercase mb-3 text-light display-6 text-center">Il tuo biglietto</h3>
       <div class="ticket-showcase bg-light p-3">
-        <h3 class="text-uppercase">Dettaglio passeggero</h3>
-        <div class="ticket-preview d-block">
+        <h3 class="text-uppercase mb-4">Dettaglio passeggero</h3>
+        <div class="ticket-preview">
           <div class="row">
             <div class="col-md-4">
               <div class="passenger-fullName">
@@ -52,19 +51,46 @@
             </div>
             <div class="col-md-8">
               <div class="row">
-                <div class="col-md-3">ciao</div>
+                <div class="col-md-3">
+                  <div class="ticket-card">
+                    <div class="ticket-card__head">
+                      <strong>Offerta</strong>
+                    </div>
+                    <div class="ticket-card__body">
+                      <span id="ticket-offer"></span>
+                    </div>
+                  </div>
+                </div>
                 <div class="col-md-3">
                   <div class="ticket-card">
                     <div class="ticket-card__head">
                       <strong>Carrozza</strong>
                     </div>
                     <div class="ticket-card__body">
-                      5
+                      17
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3">ciao</div>
-                <div class="col-md-3">ciao</div>
+                <div class="col-md-3">
+                  <div class="ticket-card">
+                    <div class="ticket-card__head">
+                      <strong>Codice CP</strong>
+                    </div>
+                    <div class="ticket-card__body">
+                      929111
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="ticket-card">
+                    <div class="ticket-card__head">
+                      <strong>Costo</strong>
+                    </div>
+                    <div class="ticket-card__body">
+                      <span id="ticket-price"></span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

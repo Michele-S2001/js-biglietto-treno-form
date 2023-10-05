@@ -12,3 +12,8 @@ body {
   -webkit-text-stroke-width: 0.6px;
   -webkit-text-stroke-color: #ffffff;
 }
+
+.ticket-card__head {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
