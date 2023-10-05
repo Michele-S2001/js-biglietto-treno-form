@@ -1,10 +1,10 @@
 # calcolo del prezzo del biglietto del treno ma più figo
 - Procurarsi tutti gli elementi che ci servono dal DOM
   - Inizializzo diverse variabili per recuperare:
-    - il pulsante dal DOM
     - l'input dal DOM
-    - lo span dal DOM dove stampo il prezzo finale
     - la select dal DOM dove l'utente seleziona il range d'età
+    - il pulsante dal DOM
+    - lo span dal DOM dove stampo il prezzo finale
 
 - Creare un event listener per ascoltare il click sul bottone
   - cliccato il bottone avviare il calcolo effettivo
@@ -16,4 +16,5 @@
         applico lo sconto del 20%
       - ALTRIMENTI SE range value = 3:
         applico lo scondo del 40%
+    - arrotondo il risultato del biglietto a 2 decimali
     - stampo il risultato con .innerHTML sullo span recuperato dal DOM
