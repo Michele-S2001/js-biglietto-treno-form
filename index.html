@@ -6,21 +6,70 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-  <section class="py-5">
+  <section class="py-5 text-center">
     <div class="container">
-        <input type="text" name="km" id="ticket-km" placeholder="Inserisci il numero di km">
-        <select name="discount" id="discount">
-          <option selected>Seleziona il range di età</option>
-          <option value="1">Minorenne</option>
-          <option value="2">Maggiorenne</option>
-          <option value="3">Over 65</option>
-        </select>
-        <button class="cta-calc">Calcola il prezzo</button>
-        <span id="ticket-price"></span>
+        <h2 class="text-uppercase mb-3 text-light display-6">cacola il prezzo del tuo biglietto</h2>
+        <div class="row justify-content-around">
+          <div class="col-lg-3">
+            <label for="user-name" class="input_label">Nome e Cognome</label>
+            <input type="text" class="form-control" name="name" id="user-full-name" placeholder="Inserisci nome e cognome">
+          </div>
+          <div class="col-lg-3">
+            <label for="ticket-km" class="input_label">Km da percorrere</label>
+            <input type="text" class="form-control" name="km" id="ticket-km" placeholder="Inserisci il numero di km">
+          </div>
+          <div class="col-lg-3">
+            <label for="discount" class="input_label">Fascia d'età</label>
+            <select class="form-select" name="discount" id="discount">
+              <option selected>Seleziona il range di età</option>
+              <option value="1">Minorenne</option>
+              <option value="2">Maggiorenne</option>
+              <option value="3">Over 65</option>
+            </select>
+          </div>
+        </div>
+        <!-- <span id="ticket-price">Prezzo calcolato</span> -->
+    </div>
+    <button class="cta-calc mt-5 btn btn-light">Calcola il prezzo</button>
+  </section>
+
+  <section>
+    <div class="container">
+      <h3 class="text-uppercase mb-3 text-light display-6 text-center">Il tuo biglietto</h3>
+      <div class="ticket-showcase bg-light p-3">
+        <h3 class="text-uppercase">Dettaglio passeggero</h3>
+        <div class="ticket-preview d-block">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="passenger-fullName">
+                <h4 class="text-uppercase">nome passeggero</h4>
+                <span id="ticket-name" class="text-capitalize fw-bold fs-5"></span>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-3">ciao</div>
+                <div class="col-md-3">
+                  <div class="ticket-card">
+                    <div class="ticket-card__head">
+                      <strong>Carrozza</strong>
+                    </div>
+                    <div class="ticket-card__body">
+                      5
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">ciao</div>
+                <div class="col-md-3">ciao</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
