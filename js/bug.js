@@ -22,40 +22,48 @@ const ticketOfferDescDomElement = document.getElementById('ticket-offer');
 
 ctaDomElement.addEventListener('click', function () {
 
-  //recupero il value dell'input
+  //recupero il value dell'input km
   const kmNumber = parseFloat(kmInputDomElement.value);
-
-  //calcolo il prezzo del biglietto
-  const pricePerKm = 0.21;
-  let ticketPrice = kmNumber * pricePerKm; 
-
-  //recupero il value della select
-  const ageRange = discountSelDomElement.value;
-
-  //con ageRange creo delle istruzioni condizionali per applicare lo sconto
-  if (ageRange == "1") {
-    let discount = ticketPrice * 0.2;
-    ticketPrice -= discount;
-    ticketOfferDescDomElement.innerHTML = "Offerta Minorenni";
-  } else if (ageRange == "3") {
-    let discount = ticketPrice * 0.4;
-    ticketPrice -= discount;
-    ticketOfferDescDomElement.innerHTML = "Offerta Over65";
-  } else {
-    ticketOfferDescDomElement.innerHTML = "Offerta Standard";
-  }
-
-  //arrotondo il ticket price a 2 cifre decimali
-  ticketPrice = ticketPrice.toFixed(2);
-
-  //faccio apparire tutto il biglietto
-  ticketPreviewDomElement.classList.remove('d-none');
-  ticketPreviewDomElement.classList.add('d-block');
-
-  //stampo il risultato con innerHTML nella ticket area
+  //recupero il valure dell'input nome e cognome
+  const name = nameInputDomElement.value;
   
-  priceDomElement.innerHTML = ticketPrice + '&euro;';
-
-  //stampo il nome dell'utente sul biglietto
-  nameDomElement.innerHTML = nameInputDomElement.value;
+  if(isNaN(kmNumber) || kmNumber <= 0) {
+    alert('VALORE KM NON VALIDO'); 
+  } else if (name === "" || (!isNaN(parseInt(name)))) {
+    alert('INSERIRE NOME');
+  }  else {
+    //calcolo il prezzo del biglietto
+    const pricePerKm = 0.21;
+    let ticketPrice = kmNumber * pricePerKm; 
+  
+    //recupero il value della select
+    const ageRange = discountSelDomElement.value;
+  
+    //con ageRange creo delle istruzioni condizionali per applicare lo sconto
+    if (ageRange == "1") {
+      let discount = ticketPrice * 0.2;
+      ticketPrice -= discount;
+      ticketOfferDescDomElement.innerHTML = "Offerta Minorenni";
+    } else if (ageRange == "3") {
+      let discount = ticketPrice * 0.4;
+      ticketPrice -= discount;
+      ticketOfferDescDomElement.innerHTML = "Offerta Over65";
+    } else {
+      ticketOfferDescDomElement.innerHTML = "Offerta Standard";
+    }
+  
+    //arrotondo il ticket price a 2 cifre decimali
+    ticketPrice = ticketPrice.toFixed(2);
+  
+    //faccio apparire tutto il biglietto
+    ticketPreviewDomElement.classList.remove('d-none');
+    ticketPreviewDomElement.classList.add('d-block');
+  
+    //stampo il risultato con innerHTML nella ticket area
+    
+    priceDomElement.innerHTML = ticketPrice + '&euro;';
+  
+    //stampo il nome dell'utente sul biglietto
+    nameDomElement.innerHTML = nameInputDomElement.value;
+  }
 })
