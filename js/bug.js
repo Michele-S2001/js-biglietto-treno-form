@@ -64,6 +64,6 @@ ctaDomElement.addEventListener('click', function () {
     priceDomElement.innerHTML = ticketPrice + '&euro;';
   
     //stampo il nome dell'utente sul biglietto
-    nameDomElement.innerHTML = nameInputDomElement.value;
+    nameDomElement.innerHTML = name;
   }
 })
